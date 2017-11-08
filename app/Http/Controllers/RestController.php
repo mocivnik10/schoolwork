@@ -33,7 +33,9 @@ class RestController extends Controller
     public function index() {
 
       $current_weather = WeatherService::get_current_weather();
+      // dd($current_weather->weather->icon);
       $forecast = WeatherService::get_forecast();
+      // dd($forecast);
 
       return view('rest/weather.index', compact('current_weather', 'forecast'));
     }

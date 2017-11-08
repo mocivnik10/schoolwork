@@ -12,24 +12,8 @@
     <div class="col-md-4">
       <div class="current_weather_info" id="city-info">
         <h3 id="city-name">{{ $current_weather->city->name . ', ' . $current_weather->city->country }}</h3>
-        @if ($current_weather->weather->description == 'clear sky')
-          <p>Clear sky</p>
-        @elseif ($current_weather->weather->description == 'few clouds')
-          <p>Few clouds</p>
-        @elseif ($current_weather->weather->description == 'scattered clouds')
-          <p>Scattered clouds</p>
-        @endif
 
-        {{--
-
-        clear sky
-        few clouds
-        scattered clouds
-        light rain && moderate rain
-        overcast clouds
-
-        --}}
-
+        {{ HTML::image('images/weather/' . $current_weather->weather->icon . '.png') }}
 
         <div class="current_temp_info">
           Trenutna temperatura: <span id="cur-temp">{{ $current_weather->temperature->now }}</span> <br>
@@ -57,6 +41,11 @@
                   <tr>
                   @foreach ($forecast as $weather)
                     <td id="forecast-temp">{{ round($weather->temperature->getvalue()) . ' °C'}}</td>
+                  @endforeach
+                  </tr>
+                  <tr>
+                  @foreach ($forecast as $weather)
+                    <td>{{ HTML::image('images/weather/' . $weather->weather->icon . '.png') }}</td>
                   @endforeach
                   </tr>
                 </tbody>
