@@ -8,6 +8,7 @@ html, body {
   background-image: url('/images/weather_background.gif');
   background-position: right bottom, left top;
   background-repeat: no-repeat, repeat;
+  background-size: cover;
 }
 .landing-content {
   margin-top: 25%;
@@ -33,12 +34,13 @@ html, body {
 
 .title {
     font-size: 74px;
-    color: white;
+    color: #636b6f;
 }
 
 .author {
   font-size: 28px;
-  color: white;
+  color: black;
+  font-weight: bold;
 }
 
 .links > a {
@@ -56,12 +58,12 @@ html, body {
 }
 
 .links > a.weather-link {
-  color: white;
+  color: #636b6f;
   padding: 10px;
 }
 
 .links > a.weather-link:hover {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(212, 211, 211, 0.40);
 }
 
 .m-b-md {
