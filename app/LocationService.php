@@ -11,7 +11,8 @@ class LocationService extends Model
     $ip= \Request::ip();
     $data = \Location::get($ip);
     $city = $data->cityName;
-    // dd($data);
+    dd($ip);
+    return $city;
     if ($city != null) {
       return $city;
     } else {
