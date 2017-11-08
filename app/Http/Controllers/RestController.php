@@ -24,8 +24,6 @@ class RestController extends Controller
     // todo:
     // - Icons for different types of weather
 
-    // dd($data);
-
     return Response::json(array(
       'success' => true,
       'data'   => $data

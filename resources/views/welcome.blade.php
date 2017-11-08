@@ -14,7 +14,7 @@
               Iztok Močivnik
             </div>
 
-            <div class="links">
+            <div class="links weather-button">
                 <a class="weather-link" href="/weather">WEATHER APP</a>
             </div>
         </div>

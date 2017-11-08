@@ -59,11 +59,18 @@ html, body {
 
 .links > a.weather-link {
   color: #636b6f;
-  padding: 10px;
+  padding: 10px 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+.weather-button {
+  margin-top: 50px;
 }
 
 .links > a.weather-link:hover {
-  background-color: rgba(212, 211, 211, 0.40);
+  background-color: rgba(212, 211, 211, 0.2);
 }
 
 .m-b-md {

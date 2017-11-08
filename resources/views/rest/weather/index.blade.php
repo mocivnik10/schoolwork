@@ -56,7 +56,7 @@
                 <tbody>
                   <tr>
                   @foreach ($forecast as $weather)
-                    <td id="forecast-temp">{{ $weather->temperature }}</td>
+                    <td id="forecast-temp">{{ round($weather->temperature->getvalue()) . ' °C'}}</td>
                   @endforeach
                   </tr>
                 </tbody>

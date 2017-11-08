@@ -51,7 +51,7 @@
             $("#min-temp").text(data.friendly_temp.min + ' °C');
 
             for (var i = 1; i < data.forecast_temp.length + 1; i++) {
-              $('#forecast-temp:nth-child('+i+')').text(data.forecast_temp[i-1] + ' °C');
+              $('#forecast-temp:nth-child('+i+')').text(Math.round(data.forecast_temp[i-1]) + ' °C');
             };
           }
 
