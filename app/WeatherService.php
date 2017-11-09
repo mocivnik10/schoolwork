@@ -14,10 +14,12 @@ class WeatherService extends Model
       $current_weather = $lowm->getCurrentWeather($city);
       $forecast = $lowm->getWeatherForecast($city, '', '', 7);
 
-      $parsed_temperature = array(
-        "now" => $current_weather->temperature->now->getValue(),
-        "max" => $current_weather->temperature->max->getValue(),
-        "min" => $current_weather->temperature->min->getValue(),
+      $parsed_data = array(
+        "temp_now" => $current_weather->temperature->now->getValue(),
+        "temp_max" => $current_weather->temperature->max->getValue(),
+        "temp_min" => $current_weather->temperature->min->getValue(),
+        "humidity" => $current_weather->humidity->getvalue(),
+        "pressure" => $current_weather->pressure->getValue(),
       );
 
 
@@ -31,7 +33,7 @@ class WeatherService extends Model
       $array = [
         'current_weather' => $current_weather,
         'forecast' => $forecast,
-        'friendly_temp' => $parsed_temperature,
+        'friendly_data' => $parsed_data,
         'forecast_temp' => $weekly_temp,
         'forecast_icon' => $weekly_icon
       ];

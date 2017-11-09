@@ -44,12 +44,15 @@
 
           function handleNewWeatherINfo(data){
             console.log("response: ", data);
-            $("#city-name").text(data.current_weather.city['name']);
+            $("#city-name").text(data.current_weather.city['name'] + ', ' + data.current_weather.city['country']);
             $("#weather-icon").attr('src', '/images/weather/' + data.current_weather.weather['icon'] + '.png');
 
-            $("#cur-temp").text(data.friendly_temp.now + ' °C');
-            $("#max-temp").text(data.friendly_temp.max + ' °C');
-            $("#min-temp").text(data.friendly_temp.min + ' °C');
+            $("#cur-temp").text(data.friendly_data.temp_now + ' °C');
+            $("#max-temp").text(data.friendly_data.temp_max + ' °C');
+            $("#min-temp").text(data.friendly_data.temp_min + ' °C');
+
+            $("#weather-humidity").text(data.friendly_data.humidity + ' %');
+            $("#weather-pressure").text(data.friendly_data.pressure + ' hPa');
 
             for (var i = 1; i < data.forecast_temp.length + 1; i++) {
               $('#forecast-temp:nth-child('+i+')').text(Math.round(data.forecast_temp[i-1]) + ' °C');
