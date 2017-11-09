@@ -23,4 +23,7 @@ Route::get('/weather/search/', 'RestController@search');
 //User Auth
 Auth::routes();
 Route::get('/home', 'RestController@index');
-  // ->name('home')
+
+//ratings
+Route::get('/rating', 'RatingController@index');
+Route::post('/rating', 'RatingController@store');

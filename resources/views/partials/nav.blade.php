@@ -2,7 +2,7 @@
     <div class="navbar-menu">
       <div class="navbar-links text-right links">
         <a href="/">Home</a>
-        <a href="/rate">Rate</a>
+        <a href="/rating">Rate</a>
           @auth
               <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();

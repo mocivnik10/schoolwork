@@ -14,6 +14,8 @@
 
         <!-- Styles -->
         <link href="/css/app.css" rel="stylesheet">
+        <link href="/css/stars.css" rel="stylesheet" >
+        <link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" >
 
         <!-- Autocomplete -->
         {{-- AIzaSyCEdF4PkzNGKtCnBkcAvz8FzjfgDaROL8I --}}
@@ -23,6 +25,7 @@
 
         <script src="/js/jquery.geocomplete.js"></script>
         <script src="/js/logger.js"></script>
+        <script src="/js/stars.js"></script>
 
     </head>
     <body>

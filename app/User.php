@@ -31,4 +31,5 @@ class User extends Authenticatable
     public function ratings() {
       return $this->hasOne(Rating::class);
     }
+
 }
