@@ -21,9 +21,6 @@ class RestController extends Controller
 
     $data = WeatherService::get_weather($city, $country);
 
-    // todo:
-    // - Icons for different types of weather
-
     return Response::json(array(
       'success' => true,
       'data'   => $data
@@ -31,11 +28,8 @@ class RestController extends Controller
   }
 
     public function index() {
-
       $current_weather = WeatherService::get_current_weather();
-      // dd($current_weather->weather->icon);
       $forecast = WeatherService::get_forecast();
-      // dd($forecast);
 
       return view('rest/weather.index', compact('current_weather', 'forecast'));
     }

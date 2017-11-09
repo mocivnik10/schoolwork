@@ -13,7 +13,7 @@
       <div class="current_weather_info" id="city-info">
         <h3 id="city-name">{{ $current_weather->city->name . ', ' . $current_weather->city->country }}</h3>
 
-        {{ HTML::image('images/weather/' . $current_weather->weather->icon . '.png') }}
+        {{ HTML::image('images/weather/' . $current_weather->weather->icon . '.png', 'weather icon' , array('id' => 'weather-icon')) }}
 
         <div class="current_temp_info">
           Trenutna temperatura: <span id="cur-temp">{{ $current_weather->temperature->now }}</span> <br>
@@ -45,7 +45,7 @@
                   </tr>
                   <tr>
                   @foreach ($forecast as $weather)
-                    <td>{{ HTML::image('images/weather/' . $weather->weather->icon . '.png') }}</td>
+                    <td id="forecast-icon">{{ HTML::image('images/weather/' . $weather->weather->icon . '.png') }}</td>
                   @endforeach
                   </tr>
                 </tbody>

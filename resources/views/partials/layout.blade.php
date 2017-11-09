@@ -45,6 +45,7 @@
           function handleNewWeatherINfo(data){
             console.log("response: ", data);
             $("#city-name").text(data.current_weather.city['name']);
+            $("#weather-icon").attr('src', '/images/weather/' + data.current_weather.weather['icon'] + '.png');
 
             $("#cur-temp").text(data.friendly_temp.now + ' °C');
             $("#max-temp").text(data.friendly_temp.max + ' °C');
@@ -52,7 +53,9 @@
 
             for (var i = 1; i < data.forecast_temp.length + 1; i++) {
               $('#forecast-temp:nth-child('+i+')').text(Math.round(data.forecast_temp[i-1]) + ' °C');
+              $('#forecast-icon:nth-child('+i+')').children().attr('src', '/images/weather/' + data.forecast_icon[i-1] + '.png');
             };
+
           }
 
 

@@ -21,12 +21,20 @@ class WeatherService extends Model
       );
 
 
-      $weekly = array();
+      $weekly_temp = array();
+      $weekly_icon = array();
       foreach($forecast as $weather) {
-       $weekly[] = $weather->temperature->getValue();
+       $weekly_temp[] = $weather->temperature->getValue();
+       $weekly_icon[] = $weather->weather->icon;
      }
 
-      $array = ['current_weather' => $current_weather, 'forecast' => $forecast, 'friendly_temp' => $parsed_temperature, 'forecast_temp' => $weekly];
+      $array = [
+        'current_weather' => $current_weather,
+        'forecast' => $forecast,
+        'friendly_temp' => $parsed_temperature,
+        'forecast_temp' => $weekly_temp,
+        'forecast_icon' => $weekly_icon
+      ];
       return $array;
     }
 
